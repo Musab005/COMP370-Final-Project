@@ -11,7 +11,7 @@ csv_file_path = os.path.join(root_dir, "data", "articles.csv")
 with open(json_file_path, "r", encoding="utf-8") as f:
     articles = json.load(f)
 
-fields = ["date", "title", "description", "url", "coding"]
+fields = ["date", "title", "description", "coding"]
 
 csv_data = []
 for article in articles:
@@ -23,7 +23,6 @@ for article in articles:
         "date": date,
         "title": article.get("title", ""),
         "description": article.get("description", ""),
-        "url": article.get("url", ""),
         "coding": "",
     })
 

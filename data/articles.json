@@ -1,6 +1,45 @@
 [
     {
         "source": {
+            "id": "rt",
+            "name": "RT"
+        },
+        "author": "RT",
+        "title": "Fyodor Lukyanov: Biden is trying to throw Trump under the Ukrainian bus",
+        "description": "The White House recognises that negotiations to end the conflict are inevitable, but it wants to delay the day of judgment.  Read Full Article at RT.com",
+        "url": "https://www.rt.com/news/608009-biden-is-trying-to-throw-trump/",
+        "urlToImage": "https://mf.b37mrtl.ru/files/2024.11/article/673fb201203027124331bfa2.jpg",
+        "publishedAt": "2024-11-21T22:20:00Z",
+        "content": "We’ve seen an uproar since it’s become apparent that the US has given Ukraine permission to launch long-range strikes deep inside Russia. There are several reasons for this. \r\nFirstly, Moscow’s unequ… [+5197 chars]"
+    },
+    {
+        "source": {
+            "id": null,
+            "name": "[Removed]"
+        },
+        "author": null,
+        "title": "[Removed]",
+        "description": "[Removed]",
+        "url": "https://removed.com",
+        "urlToImage": null,
+        "publishedAt": "2024-11-21T22:18:31Z",
+        "content": "[Removed]"
+    },
+    {
+        "source": {
+            "id": null,
+            "name": "[Removed]"
+        },
+        "author": null,
+        "title": "[Removed]",
+        "description": "[Removed]",
+        "url": "https://removed.com",
+        "urlToImage": null,
+        "publishedAt": "2024-11-21T22:18:29Z",
+        "content": "[Removed]"
+    },
+    {
+        "source": {
             "id": null,
             "name": "Futurism"
         },
@@ -6459,44 +6498,5 @@
         "urlToImage": null,
         "publishedAt": "2024-11-21T07:13:20Z",
         "content": "[Removed]"
-    },
-    {
-        "source": {
-            "id": null,
-            "name": "Slashdot.org"
-        },
-        "author": "feedfeeder",
-        "title": "Trump bets he can scandal-proof his most controversial Cabinet picks - POLITICO",
-        "description": "Trump bets he can scandal-proof his most controversial Cabinet picksPOLITICO Three of Trump's Cabinet selections face allegations of sexual misconductNBC News Elon Musk To Pete Hegseth: Trump Picks Who Face Sexual Harassment ChargesNDTV Trump administration p…",
-        "url": "https://slashdot.org/firehose.pl?op=view&amp;id=175513431",
-        "urlToImage": null,
-        "publishedAt": "2024-11-21T07:13:15Z",
-        "content": "The Fine Print: The following comments are owned by whoever posted them. We are not responsible for them in any way."
-    },
-    {
-        "source": {
-            "id": null,
-            "name": "[Removed]"
-        },
-        "author": null,
-        "title": "[Removed]",
-        "description": "[Removed]",
-        "url": "https://removed.com",
-        "urlToImage": null,
-        "publishedAt": "2024-11-21T07:11:42Z",
-        "content": "[Removed]"
-    },
-    {
-        "source": {
-            "id": null,
-            "name": "ExchangeWire"
-        },
-        "author": "Aimee Newell Tarín",
-        "title": "Walmart’s Ad Business Sees 28% Growth; Apple Starts Selling News Ads; X Partners with PubMatic",
-        "description": "News in brief: Walmart’s Ad Business Sees 28% Growth; Apple Starts Selling News Ads; X Partners with PubMatic \nWalmart’s Ad Business Sees 28% Growth\nWalmart has reported a strong revenue growth for Q3, increasing 5.5% to a total of USD$169.6bn (£134bn). The […",
-        "url": "https://www.exchangewire.com/blog/2024/11/21/walmarts-ad-business-sees-28-growth-apple-starts-selling-news-ads-x-partners-with-pubmatic/",
-        "urlToImage": "https://cdn.exchangewire.com/wp-content/uploads/2024/08/computergreen342-crop.jpg",
-        "publishedAt": "2024-11-21T07:10:00Z",
-        "content": "News in brief: Walmarts Ad Business Sees 28% Growth; Apple Starts Selling News Ads; X Partners with PubMatic \r\nWalmarts Ad Business Sees 28% Growth\r\nWalmart has reported a strong revenue growth for Q… [+1634 chars]"
     }
 ]
