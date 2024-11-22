@@ -23,11 +23,11 @@ def load_output_file_path():
 
 def load_keywords():
     current_file_path = os.path.dirname(os.path.abspath(__file__))
-    api_json_path = os.path.join(current_file_path, '..', 'data', 'input.json')
-    with open(api_json_path, 'r') as file:
+    input_json_path = os.path.join(current_file_path, '..', 'data', 'input.json')
+    with open(input_json_path, 'r') as file:
         data = json.load(file)
     key, values = next(iter(data.items()))
-    print("key and values: ", key, values)
+    print("keywords to find: ", values)
     return key, values
 
 
@@ -35,7 +35,6 @@ def fetch_news(url, api_key, news_keywords, lookback_days=10):
     if not news_keywords:
         raise ValueError("news_keywords cannot be empty.")
 
-    articles_list = []
     today = datetime.today()
     lookback_days_ago = today - timedelta(days=lookback_days)
     from_date = lookback_days_ago.strftime('%Y-%m-%d')
@@ -46,21 +45,29 @@ def fetch_news(url, api_key, news_keywords, lookback_days=10):
         "language": "en",
         "from": from_date,
         "to": to_date,
-        "apiKey": api_key
+        "apiKey": api_key,
+        "page": "1",
+        "sortBy": "publishedAt"
     }
 
-    response = requests.get(url, params=params)
+    all_articles = []
 
-    if response.status_code == 200:
-        data = response.json()
-        for article in data["articles"]:
-            articles_list.append(article)
-    else:
-        error = response.json()
-        status = error["status"]
-        code = error["code"]
-        message = error["message"]
-        print(f"Failed to retrieve data. Status code: {status} {code}")
-        print(f"Details: {message}")
+    # Iterate over pages 1 to 5 to get 500 total results
+    for page in range(1, 6):
+        params["page"] = page
+        response = requests.get(url, params=params)
 
-    return articles_list
+        if response.status_code == 200:
+            data = response.json()
+            articles = data.get("articles", [])
+            all_articles.extend(articles)
+            print(f"Page {page}: Retrieved {len(articles)} articles.")
+        else:
+            print(f"Failed to fetch page {page}: {response.status_code}")
+            break
+
+    print(f"Total articles fetched: {len(all_articles)}")
+    return all_articles
+
+
+

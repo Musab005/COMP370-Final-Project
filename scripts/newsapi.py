@@ -10,9 +10,11 @@ sys.path.insert(0, BASE_DIR)
 
 
 def parse_arguments():
-    # usage: python newsapi.py [-b <# days to lookback>]
-    parser = argparse.ArgumentParser(description="Fetch news articles")
-    parser.add_argument('-b', '--lookback_days', help='number of days to look back', type=int, default=10)
+    # usage: python -m scripts.newsapi.py [-b <# days to lookback>]
+    parser = argparse.ArgumentParser(description="Fetch news articles using the News API",
+                                     epilog="Example: python -m scripts.newsapi.py -b 7")
+    parser.add_argument('-b', '--lookback_days',
+                        help='Number of days to look back when fetching articles. Default is 10.', type=int, default=10)
     return parser.parse_args()
 
 
@@ -25,7 +27,6 @@ def main():
 
     try:
         articles = fetch_news(url, api_key, values, args.lookback_days)
-        print(f"Number of articles fetched: { len(articles)}")
         with open(output_file_path, 'w', encoding="utf-8", newline='') as output_file:
             json.dump(articles, output_file, indent=4, ensure_ascii=False)
     except Exception as e:
