@@ -1,3 +1,5 @@
 # COMP370-Final-Project
 
-Usage: From root directory (\COMP370-Final-Project) `python -m scripts.newsapi`
+Usage (from root directory \COMP370-Final-Project):
+1) `python -m scripts.newsapi`
+2) `python -m scripts.extract_to_csv`
