@@ -46,7 +46,7 @@ def fetch_news(url, api_key, news_keywords, lookback_days=10):
         "from": from_date,
         "to": to_date,
         "apiKey": api_key,
-        "page": "1",
+        "page": 1,
         "sortBy": "publishedAt"
     }
 
