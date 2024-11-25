@@ -30,8 +30,12 @@ def load_keywords():
     print("keywords to find: ", values)
     return key, values
 
+def is_valid_article(article):
+    title = article.get('title', '')
+    description = article.get('description', '')
+    return title != '[Removed]' and description != '[Removed]'
 
-def fetch_news(url, api_key, news_keywords, lookback_days=10):
+def fetch_news(url, api_key, news_keywords, lookback_days=10, max_articles=500):
     if not news_keywords:
         raise ValueError("news_keywords cannot be empty.")
 
@@ -52,20 +56,20 @@ def fetch_news(url, api_key, news_keywords, lookback_days=10):
 
     all_articles = []
 
-    # Iterate over pages 1 to 5 to get 500 total results
-    for page in range(1, 6):
-        params["page"] = page
+    while len(all_articles) < max_articles:
         response = requests.get(url, params=params)
-
         if response.status_code == 200:
             data = response.json()
             articles = data.get("articles", [])
+            params['to'] = articles[-1]['publishedAt']
+            articles = list(filter(is_valid_article, articles))
             all_articles.extend(articles)
-            print(f"Page {page}: Retrieved {len(articles)} articles.")
+            print(f"Retrieved {len(articles)} articles.")
         else:
-            print(f"Failed to fetch page {page}: {response.status_code}")
+            print(f"Failed to fetch page {page}: {response.status_code} {response.text}")
             break
-
+    
+    all_articles = all_articles[:max_articles]
     print(f"Total articles fetched: {len(all_articles)}")
     return all_articles
 
