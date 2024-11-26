@@ -27,8 +27,20 @@ def main():
 
     try:
         articles = fetch_news(url, api_key, values, args.lookback_days)
+        
+        seen_articles = set()
+        unique_articles = []
+
+        for article in articles:
+            author_title = (article.get('author', ''), article.get('title', ''))
+            
+            if author_title not in seen_articles:
+                seen_articles.add(author_title)
+                unique_articles.append(article)
+
         with open(output_file_path, 'w', encoding="utf-8", newline='') as output_file:
-            json.dump(articles, output_file, indent=4, ensure_ascii=False)
+            json.dump(unique_articles, output_file, indent=4, ensure_ascii=False)
+    
     except Exception as e:
         print(f"Error fetching data: {e}")
 
