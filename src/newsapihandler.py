@@ -35,7 +35,7 @@ def is_valid_article(article):
     description = article.get('description', '')
     return title != '[Removed]' and description != '[Removed]'
 
-def fetch_news(url, api_key, news_keywords, lookback_days=10, max_articles=500):
+def fetch_news(url, api_key, news_keywords, lookback_days=10, max_articles=550):
     if not news_keywords:
         raise ValueError("news_keywords cannot be empty.")
 
