@@ -33,7 +33,7 @@ def load_keywords():
 def is_valid_article(article):
     title = article.get('title', '')
     description = article.get('description', '')
-    return title != '[Removed]' and description != '[Removed]'
+    return title != '[Removed]' and description != '[Removed]' and title != '' and description != ''
 
 def fetch_news(url, api_key, news_keywords, lookback_days=10, max_articles=550):
     if not news_keywords:
